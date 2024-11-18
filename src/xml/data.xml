@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<spots>
+    <spot>
+        <name>A</name>
+        <latitude>123.456</latitude>
+        <longitude>155.700</longitude>
+    </spot>
+    <spot>
+        <name>B</name>
+        <latitude>132.448</latitude>
+        <longitude>167.489</longitude>
+    </spot>
+    <provider>
+        <storename></storename>
+
+    </provider>
+</spots>
