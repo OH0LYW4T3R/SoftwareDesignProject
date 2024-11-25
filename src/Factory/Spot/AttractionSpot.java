@@ -2,20 +2,42 @@ package Factory.Spot;
 
 public class AttractionSpot implements Spot {
     private String storeName;
-    private Double latitude; // 위도
-    private Double longitude; // 경도
-    public void getInfo() {
-        System.out.println("놀거리 정보를 가진 장소임~");
+    private String address;
+    private SpotFlag spotFlag;
+    private String provider;
+
+    public AttractionSpot(String provider, String storeName, String address) {
+        this.provider = provider;
+        this.storeName = storeName;
+        this.address = address;
     }
 
     // getter
+    public void getInfo() {
+        System.out.println("놀거리를 위한 스팟임~");
+    }
+    @Override
+    public String getProvider() {
+        return this.provider;
+    }
+    public SpotFlag getSpotFlag() { return this.spotFlag; }
     public String getStoreName() { return this.storeName; }
-    public Double getLatitude() { return this.latitude; }
-    public Double getLongitude() { return this.longitude; }
+
+    @Override
+    public String getAddress() {
+        return this.address;
+    }
 
 
     // setter
-    public void setStoreName(String value) {}
-    public void setLatitude(Double value) {}
-    public void setLongitude(Double value) {}
+    public void setStoreName(String value) {
+        this.storeName = storeName;
+    }
+    public void setSpotFlag(SpotFlag spotFlag) {
+        this.spotFlag = spotFlag;
+    }
+    @Override
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

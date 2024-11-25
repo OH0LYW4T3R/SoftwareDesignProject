@@ -9,6 +9,7 @@ import Observer.Subscriber;
 //
 public interface Admin extends Publisher {
     //
+    public void allReadProvider();
     public void addProvider(Provider provider);
     public void DeleteProvider(Provider provider);
 }

@@ -1,15 +1,16 @@
 package Factory.Spot;
 
+
 public interface Spot {
     // doStuff()
     public void getInfo();
 
-
+    public SpotFlag getSpotFlag();
+    public void setSpotFlag(SpotFlag spotFlag);
+    public String getProvider();
     public String getStoreName();
-    public Double getLatitude();
-    public Double getLongitude();
+    public String getAddress();
 
     public void setStoreName(String value);
-    public void setLatitude(Double value);
-    public void setLongitude(Double vale);
+    public void setAddress(String address);
 }

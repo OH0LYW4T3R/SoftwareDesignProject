@@ -8,11 +8,44 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BasicProvider implements Provider{
-    Admin admin;
-    List<Spot> spotList = new ArrayList<>();
+    private String name;
+    private String email;
+    private Integer age;
+    private Admin admin;
+    private List<Spot> spotList = new ArrayList<>();
 
     public BasicProvider(Admin admin) {
         this.admin = admin;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public String getEmail() {
+        return this.email;
+    }
+
+    @Override
+    public Integer getAge() {
+        return this.age;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     @Override
@@ -23,8 +56,14 @@ public class BasicProvider implements Provider{
     }
 
     @Override
-    public void createSpot(SpotFactory spotFactory) {
-        spotList.add(spotFactory.createSpot("Default", 0.0, 0.0));
+    public List<Spot> getSpotList() {
+        return spotList;
+    }
+
+    @Override
+    public void createSpot(SpotFactory spotFactory, String provider, String name, String address) {
+        System.out.println("스팟 생성완료");
+        spotList.add(spotFactory.createSpot(provider, name, address));
     }
 
     @Override

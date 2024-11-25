@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<travelers>
+    <traveler>
+        <name>Michael Smith</name>
+        <age>27</age>
+    </traveler>
+    <traveler>
+        <name>Emily Johnson</name>
+        <age>34</age>
+    </traveler>
+    <traveler>
+        <name>Daniel Brown</name>
+        <age>22</age>
+    </traveler>
+    <traveler>
+        <name>Sophia Davis</name>
+        <age>29</age>
+    </traveler>
+    <traveler>
+        <name>James Wilson</name>
+        <age>41</age>
+    </traveler>
+    <traveler>
+        <name>Olivia Martinez</name>
+        <age>25</age>
+    </traveler>
+</travelers>

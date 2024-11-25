@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Providers>
     <Provider>
-
+        <name>XXX</name>
+        <age>35</age>
+        <email>a@b.c</email>
+    </Provider>
+    <Provider>
+        <name>John Doe</name>
+        <age>42</age>
+        <email>john.doe@example.com</email>
+    </Provider>
+    <Provider>
+        <name>Jane Smith</name>
+        <age>28</age>
+        <email>jane.smith@example.com</email>
+    </Provider>
+    <Provider>
+        <name>Emily Brown</name>
+        <age>30</age>
+        <email>emily.brown@example.net</email>
+    </Provider>
+    <Provider>
+        <name>Michael Johnson</name>
+        <age>50</age>
+        <email>michael.johnson@example.org</email>
+    </Provider>
+    <Provider>
+        <name>Linda White</name>
+        <age>45</age>
+        <email>linda.white@example.com</email>
     </Provider>
 </Providers>

@@ -8,7 +8,6 @@ import org.xml.sax.SAXException;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 
 // 싱글톤 패턴 사용
 public abstract class XMLParser {
@@ -22,23 +21,22 @@ public abstract class XMLParser {
 //        // 태그가 몇개 있는지 반환
 //    }
 
-    public abstract List<Objects[]> getTagsInfo();
+    public abstract List<Object[]> getTagsInfo(String xmlName);
 
-    public boolean searchingFile(String filename) throws ParserConfigurationException {
+    public Document searchingFile(String filename) throws ParserConfigurationException {
         createSingleton();
         String directory = "src/xml/" + filename;
+        Document document = null;
 
         try {
-            Document document = builder.parse(directory);
+            document = builder.parse(directory);
         } catch (IOException e) {
             System.out.println(e);
-            return false;
         } catch (SAXException e) {
             System.out.println(e);
-            return false;
         }
 
-        return true;
+        return document;
     }
 
     private static void createSingleton() throws ParserConfigurationException {
