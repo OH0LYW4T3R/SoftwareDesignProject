@@ -14,3 +14,4 @@ public interface Spot {
     public void setStoreName(String value);
     public void setAddress(String address);
 }
+

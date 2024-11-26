@@ -23,7 +23,7 @@ public class TravelerXMLParser extends XMLParser {
         Element root = document.getDocumentElement();
         NodeList travelerList = root.getElementsByTagName("traveler");
 
-        // spot 태그를 순회하면서 데이터를 추출
+        // Traveler 태그를 순회하면서 데이터를 추출
         for (int i = 0; i < travelerList.getLength(); i++) {
             Node travelerNode = travelerList.item(i);
 
