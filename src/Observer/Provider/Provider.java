@@ -19,7 +19,7 @@ public interface Provider {
 
     public void readSpots();
     public List<Spot> getSpotList();
-    public void createSpot(SpotFactory spotFactory, String provider, String name, String address);
+    public void createSpot(Spot spot);
     public void modifySpot();
     public void deleteSpot(Spot spot);
 }

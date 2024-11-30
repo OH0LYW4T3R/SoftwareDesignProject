@@ -2,68 +2,128 @@
 <spots>
     <spot>
         <provider>XXX</provider>
-        <Flag>Attraction</Flag>
+        <flag>attraction</flag>
         <name>Eiffel Tower</name>
         <address>Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France</address>
     </spot>
     <spot>
         <provider>Jane Smith</provider>
-        <Flag>Attraction</Flag>
+        <flag>attraction</flag>
         <name>Statue of Liberty</name>
         <address>Liberty Island, New York, NY 10004, USA</address>
     </spot>
     <spot>
         <provider>John Doe</provider>
-        <Flag>Attraction</Flag>
+        <flag>attraction</flag>
         <name>Great Wall of China</name>
         <address>Huairou District, Beijing, China</address>
     </spot>
     <spot>
         <provider>Michael Johnson</provider>
-        <Flag>Attraction</Flag>
+        <flag>attraction</flag>
         <name>Mount Fuji</name>
         <address>Kitayama, Fujinomiya, Shizuoka 418-0112, Japan</address>
     </spot>
     <spot>
         <provider>Jane Smith</provider>
-        <Flag>Attraction</Flag>
+        <flag>attraction</flag>
         <name>Sydney Opera House</name>
         <address>Bennelong Point, Sydney NSW 2000, Australia</address>
     </spot>
     <spot>
         <provider>Jane Smith</provider>
-        <Flag>Eat</Flag>
+        <flag>eat</flag>
         <name>탕화쿵푸</name>
         <address>대전 유성구 한밭대학교 정문 앞</address>
     </spot>
     <spot>
         <provider>John Doe</provider>
-        <Flag>Eat</Flag>
+        <flag>eat</flag>
         <name>묘미</name>
         <address>대전 유성구 한밭대학교 청 옆</address>
     </spot>
     <spot>
         <provider>Jane Smith</provider>
-        <Flag>Basic</Flag>
+        <flag>basic</flag>
         <name>다이소 한밭대 점</name>
         <address>대전 유성구 한밭대학교 정문</address>
     </spot>
     <spot>
         <provider>Linda White</provider>
-        <Flag>Basic</Flag>
+        <flag>basic</flag>
         <name>롯데 프레쉬</name>
         <address>대전 유성구 한밭대학교 뚜레주르 옆</address>
     </spot>
     <spot>
         <provider>Emily Brown</provider>
-        <Flag>Rest</Flag>
+        <flag>rest</flag>
         <name>피에스타</name>
         <address>대전 유성구 학하서로121번길 71-8 2층</address>
     </spot>
     <spot>
         <provider>Linda White</provider>
-        <Flag>Eat</Flag>
+        <flag>eat</flag>
         <name>몬스터버거</name>
         <address>대전 유성구 동서대로179번길 69 지상1층 102호</address>
+    </spot>
+    <spot>
+        <provider>Korea Travel Agency</provider>
+        <flag>attraction</flag>
+        <name>경복궁</name>
+        <address>서울특별시 종로구 사직로 161</address>
+    </spot>
+    <spot>
+        <provider>Seoul Foodies</provider>
+        <flag>eat</flag>
+        <name>광장시장</name>
+        <address>서울특별시 종로구 창경궁로 88</address>
+    </spot>
+    <spot>
+        <provider>Nature Retreats</provider>
+        <flag>rest</flag>
+        <name>남산 서울타워</name>
+        <address>서울특별시 용산구 남산공원길 105</address>
+    </spot>
+    <spot>
+        <provider>Essential Korea</provider>
+        <flag>basic</flag>
+        <name>이마트 24</name>
+        <address>서울특별시 강남구 테헤란로 521</address>
+    </spot>
+    <spot>
+        <provider>Jeju Tours</provider>
+        <flag>attraction</flag>
+        <name>한라산</name>
+        <address>제주특별자치도 제주시 1100로 2070-61</address>
+    </spot>
+    <spot>
+        <provider>Busan Food Lovers</provider>
+        <flag>eat</flag>
+        <name>자갈치시장</name>
+        <address>부산광역시 중구 자갈치해안로 52</address>
+    </spot>
+    <spot>
+        <provider>Peaceful Stays</provider>
+        <flag>rest</flag>
+        <name>해운대 해수욕장</name>
+        <address>부산광역시 해운대구 우동</address>
+    </spot>
+    <spot>
+        <provider>Everyday Korea</provider>
+        <flag>basic</flag>
+        <name>CU 편의점</name>
+        <address>서울특별시 강남구 삼성로 612</address>
+    </spot>
+    <spot>
+        <provider>Gyeongju Heritage</provider>
+        <flag>attraction</flag>
+        <name>불국사</name>
+        <address>경상북도 경주시 불국로 385</address>
+    </spot>
+    <spot>
+        <provider>Daejeon Food Hub</provider>
+        <flag>eat</flag>
+        <name>성심당</name>
+        <address>대전광역시 중구 대종로480번길 15</address>
     </spot>
 </spots>

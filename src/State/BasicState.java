@@ -2,25 +2,24 @@ package State;
 
 import Observer.Subscriber;
 
-public class HungryState implements State{
+public class BasicState implements State{
     private static State state;
 
-    private HungryState() {}
-
+    private BasicState() {}
     @Override
     public String getState() {
-        return "Hungry";
+        return "Basic";
     }
 
     @Override
     public void operation(Subscriber subscriber) {
-        subscriber.getStrategy().excute(subscriber);
-        subscriber.setState(BasicState.getInstance());
+        //subscriber.setState();
     }
+
 
     public static State getInstance() {
         if (state == null) {
-            state = new HungryState();
+            state = new BasicState();
         }
         return state;
     }

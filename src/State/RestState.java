@@ -2,14 +2,15 @@ package State;
 
 import Observer.Subscriber;
 
-public class HungryState implements State{
+public class RestState implements State{
     private static State state;
 
-    private HungryState() {}
+
+    private RestState() {}
 
     @Override
     public String getState() {
-        return "Hungry";
+        return "Hardness";
     }
 
     @Override
@@ -20,7 +21,7 @@ public class HungryState implements State{
 
     public static State getInstance() {
         if (state == null) {
-            state = new HungryState();
+            state = new RestState();
         }
         return state;
     }

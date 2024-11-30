@@ -61,9 +61,8 @@ public class BasicProvider implements Provider{
     }
 
     @Override
-    public void createSpot(SpotFactory spotFactory, String provider, String name, String address) {
-        System.out.println("스팟 생성완료");
-        spotList.add(spotFactory.createSpot(provider, name, address));
+    public void createSpot(Spot spot) {
+        spotList.add(spot);
     }
 
     @Override

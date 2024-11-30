@@ -34,7 +34,7 @@ public class SpotXMLParser extends XMLParser {
 
                 // flag, name, address 값 추출
                 String provider = spotElement.getElementsByTagName("provider").item(0).getTextContent();
-                String flag = spotElement.getElementsByTagName("Flag").item(0).getTextContent();
+                String flag = spotElement.getElementsByTagName("flag").item(0).getTextContent();
                 String name = spotElement.getElementsByTagName("name").item(0).getTextContent();
                 String address = spotElement.getElementsByTagName("address").item(0).getTextContent();
 
@@ -46,7 +46,4 @@ public class SpotXMLParser extends XMLParser {
 
         return objects;
     }
-
-    // {스팟이름, 위도, 경도}, {스팟이름, 위도, 경도}, {스팟이름, 위도, 경도}, {스팟이름, 위도, 경도}
-
 }
