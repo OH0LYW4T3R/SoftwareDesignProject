@@ -1,5 +1,11 @@
 package Factory.Spot;
 
+import Event.Event;
+import Event.SpotDisableEvent;
+import Observer.Subscriber;
+
+import java.util.Random;
+
 public class RestSpot implements Spot{
     private String storeName;
     private String address;
@@ -47,6 +53,22 @@ public class RestSpot implements Spot{
     @Override
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public boolean randomDisable(Subscriber subscriber) {
+        Random random = new Random();
+        int max = 100;
+        int min = 1;
+        int disableNumber = random.nextInt(max - min + 1) + min;
+
+        if(disableNumber < 31) { // 확률 30퍼
+            Event spotDisableEvent = new SpotDisableEvent();
+            spotDisableEvent.applyEffect(subscriber);
+            return true;
+        }
+
+        return false;
     }
 
 }

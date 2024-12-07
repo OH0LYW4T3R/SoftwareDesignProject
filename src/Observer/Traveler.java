@@ -11,7 +11,9 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Scanner;
 
-import SortingStrategy.BasicSortingStrategy;
+import SortingStrategy.ShortestSortingStrategy;
+import SortingStrategy.RateSortingStrategy;
+import SortingStrategy.SpaciousnessSortingStrategy;
 
 public class Traveler implements Subscriber{
     private String name;
@@ -141,8 +143,8 @@ public class Traveler implements Subscriber{
             this.sick = false;
         else {
             int boundedInt = (int) (Math.random() * (100 - 1 + 1)) + 1;
-            if (1 <= boundedInt && boundedInt <= 5)
-                sick = true;
+            if (1 <= boundedInt && boundedInt <= 30)
+                this.sick = true;
         }
 
         // 추후 아플때도 확장
@@ -150,12 +152,15 @@ public class Traveler implements Subscriber{
 
     @Override
     public void getInfo() {
-        System.out.println(name + " " + " " + age + " " + state.getState());
+        System.out.println(this.getName() + "님의 상태 : "
+                             + this.getHunger() + "-배고픔 | "
+                             + this.getHardness() + "-힘듬 | "
+                             + this.getSick() + "-아픔 |\n");
     }
 
     @Override
     public void update(String alarm) {
-        System.out.println(alarm + "(이)가 등록 되었습니다.");
+        System.out.println(alarm + "알람이 왔습니다.");
     }
 
     @Override
@@ -166,16 +171,18 @@ public class Traveler implements Subscriber{
     private void selectLogic() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("1. 최단 거리 | 2. 평점순 | 3. 덜 복잡");
-        System.out.println(">>");
+        System.out.print(">>");
         int sel = scanner.nextInt();
 
         switch (sel) {
             case 1:
-                this.setStrategy(new BasicSortingStrategy());
+                this.setStrategy(new ShortestSortingStrategy());
                 break;
             case 2:
+                this.setStrategy(new RateSortingStrategy());
                 break;
             case 3:
+                this.setStrategy(new SpaciousnessSortingStrategy());
                 break;
             default:
                 break;

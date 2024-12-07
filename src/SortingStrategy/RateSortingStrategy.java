@@ -12,8 +12,9 @@ import State.HungryState;
 import State.RestState;
 import State.BasicState;
 
-public class BasicSortingStrategy implements SortingStrategy {
-    public String getStrategy() { return "Basic"; };
+
+public class RateSortingStrategy implements SortingStrategy {
+     public String getStrategy() { return "Rate"; };
     public void setStrategy() { };
 
     private List<Spot> spotList = Main.allSpotObject;
@@ -93,5 +94,4 @@ public class BasicSortingStrategy implements SortingStrategy {
             }
         }
     }
-
 }

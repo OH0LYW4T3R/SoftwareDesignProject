@@ -1,6 +1,8 @@
 package Factory.Spot;
 
 
+import Observer.Subscriber;
+
 public interface Spot {
     // doStuff()
     public void getInfo();
@@ -13,4 +15,6 @@ public interface Spot {
 
     public void setStoreName(String value);
     public void setAddress(String address);
+
+    public boolean randomDisable(Subscriber subscriber);
 }

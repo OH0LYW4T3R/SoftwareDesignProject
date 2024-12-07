@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Eventers>
+    <Event>
+        <startTime>2024-12-09 15:30:45</startTime>
+        <endTime>2024-12-09 19:30:45</endTime>
+        <location>대전광역시 유성구</location>
+        <eventType></eventType>
+    </Event>
+    <Event>
+        <startTime>2024-12-09 15:30:45</startTime>
+        <endTime>2024-12-09 19:30:45</endTime>
+        <location>대전광역시 유성구</location>
+        <eventType></eventType>
+    </Event>
+</Eventers>

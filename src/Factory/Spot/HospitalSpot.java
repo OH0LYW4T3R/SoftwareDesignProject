@@ -6,14 +6,13 @@ import Event.SpotDisableEvent;
 
 import java.util.Random;
 
-public class EatSpot implements Spot {
+public class HospitalSpot implements Spot{
     private String storeName;
     private String address;
     private SpotFlag spotFlag;
     private String provider;
-
-     public EatSpot(String provider, String storeName, String address) {
-         this.provider = provider;
+    public HospitalSpot(String provider, String storeName, String address) {
+        this.provider = provider;
         this.storeName = storeName;
         this.address = address;
     }
@@ -61,7 +60,7 @@ public class EatSpot implements Spot {
         int min = 1;
         int disableNumber = random.nextInt(max - min + 1) + min;
 
-        if(disableNumber < 31) { // 확률 30퍼
+        if(disableNumber < 3) { // 확률 30퍼
             Event spotDisableEvent = new SpotDisableEvent();
             spotDisableEvent.applyEffect(subscriber);
             return true;

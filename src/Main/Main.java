@@ -1,11 +1,9 @@
 package Main;
 
+import Event.Event;
 import Factory.Spot.Spot;
 import Factory.Spot.SpotFlag;
-import Factory.SpotFactory.AttractionSpotFactory;
-import Factory.SpotFactory.BasicSpotFactory;
-import Factory.SpotFactory.EatSpotFactory;
-import Factory.SpotFactory.RestSpotFactory;
+import Factory.SpotFactory.*;
 import Observer.Admin.Admin;
 import Observer.Admin.BasicAdmin;
 import Observer.Provider.BasicProvider;
@@ -25,6 +23,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
+import Event.RoadClosureEvent;
+import Event.EmergencyEvent;
+
 // 디자인패턴에서 Client 클래스 역할
 // Traveler, Provider의 행동 시뮬레이션이 모두 해당 클래스 main에서 동작
 
@@ -32,16 +33,19 @@ import java.util.ListIterator;
 public class Main {
     public static List<Spot> allSpotObject = new ArrayList<>();
     public static void main(String[] args) {
+        //Event
+        Event roadClosureEvent = new RoadClosureEvent();
+        Event emergencyEvent = new EmergencyEvent();
         // XML 파싱
         XMLParser travelerXMLParser = new TravelerXMLParser();
         XMLParser spotXMLParser = new SpotXMLParser();
         XMLParser providerXMLParser = new ProviderXMLParser();
 
         // 공장 생성
-        RestSpotFactory restSpotFactory = new RestSpotFactory();
-        EatSpotFactory eatSpotFactory = new EatSpotFactory();
-        AttractionSpotFactory attractionSpotFactory = new AttractionSpotFactory();
-        BasicSpotFactory basicSpotFactory = new BasicSpotFactory();
+        SpotFactory restSpotFactory = new RestSpotFactory();
+        SpotFactory eatSpotFactory = new EatSpotFactory();
+        SpotFactory attractionSpotFactory = new AttractionSpotFactory();
+        SpotFactory basicSpotFactory = new BasicSpotFactory();
 
         Admin admin = new BasicAdmin();
 
@@ -93,7 +97,9 @@ public class Main {
             testTraveler = traveler;
         }
 
+        System.out.println("# 스팟 알림 전송 #");
         admin.notifySubscribers();
+        System.out.println("# 스팟 알림 전송 #");
 
         RouteStrategy shortest = new BasicStrategy();
         List<Spot> shortestRoute = shortest.excute(allSpotObject, 4);
@@ -102,6 +108,7 @@ public class Main {
         for(Spot spot : shortestRoute) {
             System.out.print(spot.getStoreName() + " -> ");
         }
+        System.out.println("\b\b\b");
 
         // state
         System.out.println("\n\n#시뮬레이션\n");
@@ -113,6 +120,10 @@ public class Main {
 
         while(iterator.hasNext()) {
             Spot spot = iterator.next();
+
+            roadClosureEvent.applyEffect(testTraveler);
+            if (spot.randomDisable(testTraveler)) continue;
+
             System.out.println("#" + spot.getStoreName() + "# - "
                                    + spot.getSpotFlag().toString() + "갔다옴.");
 
@@ -120,19 +131,23 @@ public class Main {
             testTraveler.setHardness(spot);
             testTraveler.setSick(spot);
 
-            System.out.println(testTraveler.getName() + "님의 상태 : "
-                             + testTraveler.getHunger() + "-배고픔 | "
-                             + testTraveler.getHardness() + "-힘듬 | "
-                             + testTraveler.getSick() + "-아픔 |\n");
+            testTraveler.getInfo();
+
+            if (testTraveler.getSick()) {
+                emergencyEvent.applyEffect(testTraveler);
+                break;
+            }
 
             testTraveler.checkHunger(); // 배고픔 수치를 검사
-            testTraveler.checkHardness();
+            testTraveler.checkHardness(); //
         }
 
         System.out.println("\nShortest - 상태에 따른 변경 경로");
         for(Spot editSpot : testTraveler.getMyRoute()) {
             System.out.print(editSpot.getStoreName() + " -> ");
         }
+
+        System.out.println("\b\b\b");
     }
 }
 
