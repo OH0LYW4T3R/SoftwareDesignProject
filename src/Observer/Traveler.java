@@ -96,16 +96,11 @@ public class Traveler implements Subscriber{
             this.hardness += (this.hardness > 4) ? 0 : 2;
         } else
             this.hardness -= (this.hardness > 0) ? 1 : 0;
-
-//        System.out.println(this.getName() + "님의 상태 : " + this.getHunger() + "-배고픔 | "
-//                 + this.getHardness() + "-힘듬 | "  + this.getSick() + "-아픔 |\n");
     }
 
     @Override
     public void checkHardness() {
          if (this.hardness <= 1) {
-//            System.out.println(this.getName() + "님의 상태 : " + this.getHunger() + "-배고픔 | "
-//                 + this.getHardness() + "-힘듬 | "  + this.getSick() + "-아픔 |\n");
             System.out.println(this.name + "님 " + "현재 쉬고싶을 것 같아요! 장소를 추천 해드릴게요");
             selectLogic();
             setState(RestState.getInstance());
@@ -121,15 +116,11 @@ public class Traveler implements Subscriber{
             this.hunger += (this.hunger > 4) ? 0 : 1;
         } else
             this.hunger -= (this.hunger > 0) ? 1 : 0;
-//        System.out.println(this.getName() + "님의 상태 : " + this.getHunger() + "-배고픔 | "
-//                 + this.getHardness() + "-힘듬 | "  + this.getSick() + "-아픔 |\n");
     }
 
     @Override
     public void checkHunger() {
-        if (this.hunger <= 1) { //
-//            System.out.println(this.getName() + "님의 상태 : " + this.getHunger() + "-배고픔 | "
-//                 + this.getHardness() + "-힘듬 | "  + this.getSick() + "-아픔 |\n");
+        if (this.hunger <= 1) {
             System.out.println(this.name + "님 " + "현재 배고플 것 같아요! 장소를 추천 해드릴게요");
             selectLogic();
             setState(HungryState.getInstance());
@@ -143,7 +134,7 @@ public class Traveler implements Subscriber{
             this.sick = false;
         else {
             int boundedInt = (int) (Math.random() * (100 - 1 + 1)) + 1;
-            if (1 <= boundedInt && boundedInt <= 30)
+            if (1 <= boundedInt && boundedInt <= 30) // 아픔 확률
                 this.sick = true;
         }
 

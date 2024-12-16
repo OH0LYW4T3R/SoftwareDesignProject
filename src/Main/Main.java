@@ -18,10 +18,7 @@ import XMLLoader.SpotXMLParser;
 import XMLLoader.TravelerXMLParser;
 import XMLLoader.XMLParser;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 import Event.RoadClosureEvent;
 import Event.EmergencyEvent;
@@ -31,7 +28,9 @@ import Event.EmergencyEvent;
 
 //xml 구현완료, Observer Pattern 테스트 완료
 public class Main {
-    public static List<Spot> allSpotObject = new ArrayList<>();
+    public static List<Spot> allSpotObject = new ArrayList<>(); // 원래는 데이터 베이스에서 꺼내오면 되지만, 데이터 베이스를 사용하지 않았으므로 해당 필드 사용
+    public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         //Event
         Event roadClosureEvent = new RoadClosureEvent();
@@ -97,12 +96,19 @@ public class Main {
             testTraveler = traveler;
         }
 
+
+        System.out.println("알림 : 생성된 스팟을 사용자에게 전송하겠습니까?");
+        scanner.nextLine();
+
         System.out.println("# 스팟 알림 전송 #");
         admin.notifySubscribers();
         System.out.println("# 스팟 알림 전송 #");
 
         RouteStrategy shortest = new BasicStrategy();
         List<Spot> shortestRoute = shortest.excute(allSpotObject, 4);
+
+        System.out.println("\n알림 : 경로 탐색 서비스를 진행 하겠습니까?");
+        scanner.nextLine();
 
         System.out.println("\nShortest - 원래 경로");
         for(Spot spot : shortestRoute) {

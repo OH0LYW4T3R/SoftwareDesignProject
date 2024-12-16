@@ -12,14 +12,6 @@ import java.util.Random;
 public class EmergencyEvent implements Event{
     @Override
     public void applyEffect(Subscriber subscriber) {
-
-        // 무조건 가까운 병원찾기
-        // 여기서 subscriber route 리스트 중간에 병원spot을 끼워넣어
-        // 그리고 병원 뒤로는 아무것도 없는 리스트를 subscriber.setMyRouteIterator(/~~~)해서
-        // 여행자의 여행루트를 덮어씌워버리기
-        // 그ㄹ러면 이벤트 끝나고 main에서 hasNext()하면 더 없으니까 여행 종료
-        // 최종 경로는 ~~ -> ~~ -> 병원
-
         List<Spot> currentRoute = subscriber.getMyRoute();
         // 이터레이터 찾기
         ListIterator<Spot> iterator = subscriber.getMyRouteIterator();
